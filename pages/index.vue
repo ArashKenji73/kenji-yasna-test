@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <div class="container mx-auto" v-if="loading || pending">
+  <div class="container mx-auto">
+    <div v-if="loading || pending">
       <ArticleLoading v-for="(item) in 10" />
     </div>
     <div v-else>
-      <div class="container mx-auto">
-        <template v-for="(article, i) in articles.articles">
-          <Article :article="article" />
-        </template>
-      </div>
+      <template v-for="(article, i) in articles.articles">
+        <Article :article="article" />
+      </template>
     </div>
-    <div class="container mx-auto">
+    <div>
       <Pagination :totalPages="totalPages" v-on:page="handleClick" />
     </div>
   </div>
