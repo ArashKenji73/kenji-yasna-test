@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-red-400">
-    test
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
