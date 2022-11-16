@@ -2,51 +2,46 @@
     <div class="article">
         <div class="article-meta">
             <div class="article-author">
-                <div class="author-img"></div>
+                <img class="author-img" :src="article.author.image">
                 <div class="flex flex-col">
-                    <div class="author-username">Magda Parry</div>
+                    <div class="author-username">{{article.author.username}}</div>
                     <div class="author-date">October 9, 2022</div>
                 </div>
             </div>
-            <div class="article-like-btn">Like</div>
+            <div class="article-like-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                </svg>
+                <span>{{article.favoritesCount}}</span>
+            </div>
         </div>
         <div class="article-title">
-            At quia eos consectetur reiciendis unde rerum ducimus vitae, et exercitationem quas labore unde reiciendis
-            quas in exercitationem cupiditate at reiciendis qui nulla, at cupiditate reiciendis voluptatibus facilis hic
-            fugit ullam rerum rerum fugit aliquid, consequuntur, quae, reiciendis sapiente tenetur quos, reiciendis
-            neque error asperiores sequi, hic enim tenetur error.
-            Blanditiis beatae quia tenetur esse.
-            Reiciendis voluptatibus numquam beatae id repellat possimus sunt.
-            At dicta repellat dicta nihil nostrum qui consectetur.
-            Voluptatibus esse voluptatem aut fugit numquam eos hic dolores, nihil maiores esse, dicta cupiditate
-            possimus sunt nihil, voluptate omnis, enim at quae dicta necessitatibus.
+            {{article.title}}
         </div>
 
         <div class="article-description">
-            Veniam commodi autem voluptatibus eos dolor quas reprehenderit. Praesentium cupiditate tempore et
-            reprehenderit. Deleniti exercitationem illum maiores. Reprehenderit odio in ea voluptatem ut ut ullam.
+            {{article.description}}
         </div>
 
 
         <div class="flex justify-between items-center">
             <div class="read-more">Read more</div>
             <ul class="tags">
-                <li class="tag-pill">qui</li>
-                <li class="tag-pill">qui</li>
-                <li class="tag-pill">qui</li>
-                <li class="tag-pill">qui</li>
+                <li class="tag-pill" v-for="(tag, i) in article.tagList">{{tag}}</li>
             </ul>
         </div>
     </div>
 </template>
 
 <script setup>
-
+const props = defineProps({
+  article: Object
+})
 </script>
 
 <style lang="scss">
 .article {
-    @apply flex flex-col py-6;
+    @apply flex flex-col py-6 border-gray-200 border-t;
 
     .article-meta {
         @apply flex justify-between mb-4;

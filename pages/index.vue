@@ -3,9 +3,10 @@
     <div v-if="loading || pending">{{loading}}</div>
     <div v-else>
       <div class="container mx-auto">
-        <Article />
+        <template v-for="(article, i) in articles.articles">
+          <Article :article="article" />
+        </template>
       </div>
-      <pre>{{articles}}</pre>
     </div>
     <div @click="changePage">change page</div>
   </div>
