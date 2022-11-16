@@ -1,6 +1,6 @@
 <template>
     <ul class="pagination" @click="changePage">
-        <li class="page-item" :class="{ active: page === activePage }" :data-page="`${page}`" v-for="page in totalPages">{{page}}</li>
+        <li class="page-item" :class="{ active: activePage == page }" :data-page="`${page}`" v-for="page in totalPages">{{page}}</li>
     </ul>
 </template>
 
@@ -13,7 +13,7 @@ const emit = defineEmits(['page'])
 let activePage = ref(1)
 function changePage(e) {
     if(e.target.classList.contains('page-item')){
-        activePage.value = parseInt(e.target.dataset.page);
+        activePage.value = e.target.dataset.page;
         emit('page', activePage.value);
     }
 }
