@@ -23,6 +23,9 @@
 import { ref } from 'vue'
 import { users } from '@/API.js'
 const runtimeConfig = useRuntimeConfig()
+definePageMeta({
+  layout: "custom",
+});
 let username = ref(null);
 let email = ref(null);
 let password = ref(null);
