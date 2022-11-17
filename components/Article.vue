@@ -24,7 +24,7 @@
         </div>
 
 
-        <div class="flex justify-between items-center">
+        <div class="read-more-wrap">
             <div class="read-more">Read more</div>
             <ul class="tags">
                 <li class="tag-pill" v-for="(tag, i) in article.tagList">{{tag}}</li>
@@ -44,7 +44,7 @@ const props = defineProps({
     @apply flex flex-col py-6 border-gray-200 border-t;
 
     .article-meta {
-        @apply flex justify-between mb-4;
+        @apply w-full flex justify-between mb-4;
 
         .article-author {
             @apply flex items-center gap-4;
@@ -82,7 +82,9 @@ const props = defineProps({
             @apply  py-0 px-3 text-sm text-gray-300 border border-gray-300 rounded-xl cursor-pointer;
         }
     }
-
+    .read-more-wrap{
+        @apply flex flex-col xl:flex-row justify-between items-center;
+    }
     .read-more{
         @apply text-gray-300;
     }

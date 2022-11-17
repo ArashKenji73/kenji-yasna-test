@@ -2,7 +2,6 @@
     <div class="signup">
 
         <form>
-            
             <label for="chk" aria-hidden="true">Sign up</label>
             <div class="errors" v-if="errors">
                 <div v-for="(value, key) in errors">
@@ -15,7 +14,6 @@
             <button @click.prevent="signUp">Sign up</button>
         </form>
 
-        {{ username }}{{ email }}{{ password }}
     </div>
 </template>
 

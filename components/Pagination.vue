@@ -21,7 +21,7 @@ function changePage(e) {
 
 <style lang="scss">
 .pagination {
-    @apply flex my-4;
+    @apply flex flex-wrap my-4;
 
     .page-item {
         &:first-child {

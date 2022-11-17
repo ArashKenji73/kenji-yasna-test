@@ -55,15 +55,15 @@ async function handleClick(params) {
 </script>
 <style lang="scss">
 .main-article {
-  @apply w-2/3;
-}
-
-.main {
-  @apply flex justify-between gap-8;
+  @apply w-full xl:w-3/5;
 }
 
 .aside {
-  @apply w-1/3 h-max p-2 bg-slate-200;
+  @apply w-full xl:w-2/5 h-max p-2 bg-slate-200;
+}
+
+.main {
+  @apply flex flex-col flex-col-reverse xl:flex-row justify-between gap-8  ;
 }
 
 .banner {
