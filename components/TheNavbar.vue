@@ -3,9 +3,15 @@
         <nav>
             <div class="logo">conduit</div>
             <ul class="navbar">
-                <li>Home</li>
-                <li>Sign in</li>
-                <li>Sign up</li>
+                <NuxtLink to="/">
+                    Home
+                </NuxtLink>
+                <NuxtLink to="/register">
+                    sing up
+                </NuxtLink>
+                <NuxtLink to="/login">
+                    sing in
+                </NuxtLink>
             </ul>
         </nav>
     </div>
