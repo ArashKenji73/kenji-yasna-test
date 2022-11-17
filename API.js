@@ -5,3 +5,7 @@ export function getArticles (limit=10, offset=0) {
 export function getTags() {
     return `tags`
 }
+
+export function users() {
+    return `users`
+}
