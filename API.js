@@ -9,3 +9,6 @@ export function getTags() {
 export function users() {
     return `users`
 }
+export function login() {
+    return `users/login`
+}
